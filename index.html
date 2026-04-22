@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #74ebd5, #9face6);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 25px;
+            margin: 50px auto;
+            width: 450px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        input {
+            padding: 10px;
+            flex: 1;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .add-btn {
+            background: #4CAF50;
+        }
+
+        .add-btn:hover {
+            background: #45a049;
+        }
+
+        .search-box {
+            margin-bottom: 15px;
+        }
+
+        .search-box input {
+            width: 100%;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+            background: #f9f9f9;
+            margin: 8px 0;
+            padding: 12px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .actions a {
+            margin-left: 8px;
+            text-decoration: none;
+            padding: 5px 8px;
+            border-radius: 5px;
+            color: white;
+            font-size: 12px;
+        }
+
+        .delete {
+            background: red;
+        }
+
+        .edit {
+            background: orange;
+        }
+
+        .delete:hover {
+            background: darkred;
+        }
+
+        .edit:hover {
+            background: darkorange;
+        }
+    </style>
+
+    <script>
+        function searchStudent() {
+            let input = document.getElementById("search").value.toLowerCase();
+            let items = document.getElementsByTagName("li");
+
+            for (let i = 0; i < items.length; i++) {
+                let text = items[i].innerText.toLowerCase();
+                items[i].style.display = text.includes(input) ? "" : "none";
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>🎓 Student Management System</h2>
+
+    <!-- Add Student -->
+    <form action="/add" method="POST">
+        <input type="text" name="name" placeholder="Enter student name" required>
+        <button type="submit" class="add-btn">Add</button>
+    </form>
+
+    <!-- Search -->
+    <div class="search-box">
+        <input type="text" id="search" placeholder="Search student..." onkeyup="searchStudent()">
+    </div>
+
+    <!-- Student List -->
+    <ul>
+        {% for student in students %}
+        <li>
+            {{ student[1] }}
+
+            <div class="actions">
+                <!-- Edit (needs backend) -->
+                <a href="/edit/{{ student[0] }}" class="edit">✏️</a>
+
+                <!-- Delete -->
+                <a href="/delete/{{ student[0] }}" class="delete"
+                   onclick="return confirm('Are you sure?')">❌</a>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+</body>
+</html>
