@@ -10,18 +10,18 @@
 ---
 
 ## 🚀 Features
-- ➕ Add student
-- 🗑️ Delete student
-- ✏️ Edit student
-- 🔍 Search student
-- 🎨 Modern UI
+- ➕ Add student  
+- 🗑️ Delete student  
+- ✏️ Edit student  
+- 🔍 Search student  
+- 🎨 Modern UI  
 
 ---
 
 ## 🛠️ Tech Stack
-- Python (Flask)
-- HTML, CSS, JavaScript
-- SQLite
+- Python (Flask)  
+- HTML, CSS, JavaScript  
+- SQLite  
 
 ---
 
