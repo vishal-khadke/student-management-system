@@ -1,2 +1,21 @@
-# student-management-system
-A simple Student Management System built with Flask that allows adding, viewing, editing, and deleting student records with a clean UI.
+# 🎓 Student Management System
+
+A simple web-based Student Management System built using Flask.
+
+## 🚀 Features
+- Add student
+- Delete student
+- Edit student
+- Search student
+
+## 🛠️ Tech Stack
+- Python (Flask)
+- HTML, CSS, JavaScript
+- SQLite
+
+## ▶️ Run Project
+```bash
+pip install flask
+python app.py
+
+Open: http://127.0.0.1:5000
