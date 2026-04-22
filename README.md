@@ -1,5 +1,7 @@
 # 🎓 Student Management System
+## 📸 Screenshot
 
+![App Screenshot](screenshot.png)
 A simple web-based Student Management System built using Flask.
 
 ## 🚀 Features
