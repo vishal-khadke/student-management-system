@@ -1,9 +1,9 @@
 # 🎓 Student Management System
+
+A simple web-based Student Management System built using Flask.
 ## 📸 Screenshot
 
 ![App Screenshot](screenshot.png)
-A simple web-based Student Management System built using Flask.
-
 ## 🚀 Features
 - Add student
 - Delete student
